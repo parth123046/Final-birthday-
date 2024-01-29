@@ -17,7 +17,7 @@ function checkBirthdays(data) {
     let birthdayListHTML = '';
 
     data.forEach(person => {
-        const personBirthday = person.birthday.split('-').reverse().join('-'); // Reformat birthday for comparison
+        const personBirthday = person.birthday;
         if (personBirthday === todayFormatted) {
             birthdayListHTML += `
                 <div class="birthday">
