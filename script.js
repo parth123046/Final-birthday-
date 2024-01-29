@@ -23,8 +23,7 @@ function checkBirthdays(data) {
         if (personDay === dd && personMonth === mm) {
             birthdayListHTML += `
                 <div class="birthday">
-                    <p><span class="name">${person.name}</span> from class ${person.class} section ${person.section} is celebrating their birthday today! 🎉🎂</p>
-                    <p>Birthday: ${person.birthday}</p>
+                    <p><span class="name">${person.name}</span> from class ${person.class} section ${person.section} has a birthday today! 🎉🎂</p>
                 </div>
             `;
         }
