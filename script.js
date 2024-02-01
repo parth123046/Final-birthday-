@@ -1,37 +1,23 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const birthdays = [
-        { name: 'John Doe', birthday: '1-05', class: 'X', section: 'A' },
-        { name: 'Jane Smith', birthday: '01-02', class: 'XI', section: 'B' },
-        { name: 'Michael Johnson', birthday: ' 01-02, class: 'XII', section: 'C' }
-    ];
+// Example data
+const students = [
+  { name: "Alice", birthday: "01/02" },
+  { name: "Bob", birthday: "03/04" },
+  { name: "Charlie", birthday: "05/06" },
+  // Add more students here
+];
 
-    checkBirthdays(birthdays);
+// Get today's date
+const today = new Date();
+const dd = String(today.getDate()).padStart(2, '0');
+const mm = String(today.getMonth() + 1).padStart(2, '0');
+const currentDate = `${dd}/${mm}`;
+
+// Find students with today's birthday
+const todayStudents = students.filter(student => student.birthday === currentDate);
+
+// Display birthday card for each student
+todayStudents.forEach(student => {
+  const birthdayCard = document.getElementById('birthdayCard');
+  const cardContent = `<h2>Happy Birthday, ${student.name}!</h2><p>Best wishes on your special day.</p>`;
+  birthdayCard.innerHTML += cardContent;
 });
-
-function checkBirthdays(data) {
-    const today = new Date();
-    const dd = String(today.getDate()).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
-
-    let birthdayListHTML = '';
-
-    data.forEach(person => {
-        const birthdayParts = person.birthday.split('-');
-        const personDay = birthdayParts[0];
-        const personMonth = birthdayParts[1];
-
-        if (personDay === dd && personMonth === mm) {
-            birthdayListHTML += `
-                <div class="birthday">
-                    <p><span class="name">${person.name}</span> from class ${person.class} section ${person.section}  🎉🎂</p>
-                </div>
-            `;
-        }
-    });
-
-    if (birthdayListHTML === '') {
-        birthdayListHTML = '<p>No birthdays today!</p>';
-    }
-
-    document.getElementById('birthdayList').innerHTML = birthdayListHTML;
-}
