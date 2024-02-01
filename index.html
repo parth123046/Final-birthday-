@@ -3,6 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Birthday Reminder</title>
+</head>
+<body>
+
+<script>
+    // Sample student data with names and birthdays
+    const students = [
+        { name: 'John', birthday: '1995-02-01' },
+        { name: 'Alice', birthday: '1998-05-15' },
+        { name: 'Bob', birthday: '2000-11-30' },
+        // Add more students as needed
+    ];
+
+    // Function to check if today is a student's birthday
+    function checkBirthdays() {
+        const today = new Date();
+        const todayFormatted = today.toISOString().slice(0, 10); // Format today's date as YYYY-MM-DD
+
+        students.forEach(student => {
+            if (student.birthday === todayFormatted) {
+                displayBirthdayMessage(student.name);
+            }
+        });
+    }
+
+    // Function to display birthday message
+    function displayBirthdayMessage(studentName) {
+        alert(`Happy Birthday, ${studentName}! 🎉🎂`);
+    }
+
+    // Check birthdays on page load
+    checkBirthdays();
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birthday Checker</title>
     <link rel="stylesheet" href="styles.css">
 </head>
