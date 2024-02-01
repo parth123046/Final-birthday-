@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const birthdays = [
         { name: 'John Doe', birthday: '1-05', class: 'X', section: 'A' },
-        { name: 'Jane Smith', birthday: '1-02', class: 'XI', section: 'B' },
-        { name: 'Michael Johnson', birthday: '1-03, class: 'XII', section: 'C' }
+        { name: 'Jane Smith', birthday: '01-02', class: 'XI', section: 'B' },
+        { name: 'Michael Johnson', birthday: ' 02-01, class: 'XII', section: 'C' }
     ];
 
     checkBirthdays(birthdays);
